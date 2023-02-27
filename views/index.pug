@@ -1,24 +1,23 @@
 doctype html
 head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet' href='/css/style.css')
-    title Calculator
+  title SIMPLE CALICULATOR
+  link(rel='stylesheet' href='/css/style.css')
+  script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
 .container
-    form(action='' method='post')
-        .field
-            b Num1:
-            input(type='number' name='num1' required='required' value='')
-        .field
-            b Num2:
-            input(type='number' name='num2' required='required' value='')
-        .field
-            b Operand:
-            input(type='text' name='operator' required='required' value='')
-        button(type='submit') GO
-
-    if result
-        h1 #{result}
-
-
+  form#signup.form
+    h1 SIMPLE CALICULATOR
+    .form-field
+      label(for='num1') Enter First Number:
+      input#num1(type='number' name='num1' autocomplete='off')
+      small
+    .form-field
+      label(for='num2') Enter Second Number:
+      input#num2(type='number' name='num2' autocomplete='off')
+      small
+    .form-field
+      label(for='confirm-password') Operand:
+      input#confirm-password(type='password' name='confirm-password' autocomplete='off')
+      small
+    .form-field
+      input(type='submit' value='RESULT')
+      input#confirm-password(type='password' name='confirm-password' autocomplete='off')

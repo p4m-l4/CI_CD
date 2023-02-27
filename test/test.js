@@ -1,7 +1,8 @@
 import { assert } from 'chai';
-import {
-  add, multiply, subtract, divide,
-} from '../calculator.js';
+import add from '../calculator/add.js';
+import subtract from '../calculator/subtract.js';
+import multiply from '../calculator/multiply.js';
+import divide from '../calculator/divide.js';
 
 describe('Testing addition', () => {
   it('should return 8', () => {

@@ -1,3 +1,4 @@
 export default function add(a, b) {
-  return Number(a) + Number(b);
+  let res = Number(a) + Number(b);
+  return `${a} + ${b} = ${res}`;
 }

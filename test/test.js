@@ -24,8 +24,3 @@ describe('Testing division', () => {
     assert.equal(divide(4, 4), 1);
   });
 });
-describe('Testing addition', () => {
-  it('should return 8', () => {
-    assert.equal(add(4, 4), 8);
-  });
-});

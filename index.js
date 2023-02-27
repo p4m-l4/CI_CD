@@ -28,7 +28,8 @@ app.post('/', (req, res) => {
   let result;
   const { num1 } = req.body;
   const { num2 } = (req.body);
-  const { operator } = req.body;
+  const oper = req.body.operator;
+  const operator = oper.trim();
   let operands = ['+', '-', '/', '*'];
 
   if (!operands.includes(operator)) {

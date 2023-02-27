@@ -28,19 +28,24 @@ app.post('/', (req, res) => {
   let result;
   const { num1 } = req.body;
   const { num2 } = (req.body);
-  const { operator } = req.body;
+  const oper = req.body.operator;
+  const operator = oper.trim();
   let operands = ['+', '-', '/', '*'];
 
   if (!operands.includes(operator)) {
     result = `Wrong Operator " ${operator} "`;
   } else if (operator === '+') {
-    result = add(num1, num2);
+    let ans = add(num1, num2);
+    result = `${num1} + ${num2} = ${ans}`;
   } else if (operator === '-') {
-    result = subtract(num1, num2);
+    let ans = subtract(num1, num2);
+    result = `${num1} - ${num2} = ${ans}`;
   } else if (operator === '*') {
-    result = multiply(num1, num2);
+    let ans = multiply(num1, num2);
+    result = `${num1} x ${num2} = ${ans}`;
   } else if (operator === '/') {
-    result = divide(num1, num2);
+    let ans = divide(num1, num2);
+    result = `${num1} : ${num2} = ${ans}`;
   }
 
   res.render('index', { result });

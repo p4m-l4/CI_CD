@@ -39,13 +39,13 @@ app.post('/', (req, res) => {
     result = `${num1} + ${num2} = ${ans}`;
   } else if (operator === '-') {
     let ans = subtract(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    result = `${num1} - ${num2} = ${ans}`;
   } else if (operator === '*') {
     let ans = multiply(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    result = `${num1} x ${num2} = ${ans}`;
   } else if (operator === '/') {
     let ans = divide(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    result = `${num1} : ${num2} = ${ans}`;
   }
 
   res.render('index', { result });

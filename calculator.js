@@ -17,6 +17,6 @@ function subtract(a, b) {
 export {
   add,
   multiply,
-  divide,
   subtract,
+  divide,
 };

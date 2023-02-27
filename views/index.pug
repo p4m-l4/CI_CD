@@ -3,9 +3,10 @@ head
     title SIMPLE CALICULATOR
     link(rel='stylesheet' href='/css/style.css')
     script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
+    h1 SIMPLE CALCULATOR
 .container
-    form#signup.form
-        h1 SIMPLE CALICULATOR
+    p #{result}
+    form#signup.form(action="" method='post')
         .form-field
             label(for='num1') Enter First Number:
             input#num1(type='number' name='num1' autocomplete='off')
@@ -16,8 +17,7 @@ head
             small
         .form-field
             label(for='confirm-password') Operand:
-            input#confirm-password(type='password' name='confirm-password' autocomplete='off')
+            input#confirm-password(type='text' name='operator' autocomplete='off')
             small
         .form-field
-            input(type='submit' value='RESULT')
-            input#confirm-password(type='password' name='confirm-password' autocomplete='off')
+            button(type='submit') RESULT

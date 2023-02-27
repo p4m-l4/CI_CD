@@ -1,64 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Calculator</title>
-		<link href="../public/css/style.css" rel="stylesheet" />
-		<div class="calculator-grid">
-			<div class="output">
-				<div class="previous-operand"></div>
-				<div class="current-operand"></div>
-			</div>
-			<button class="span-two">AC</button>
-			<button class="delete">DEL</button>
-			<button>÷</button>
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			<button>*</button>
-			<button>4</button>
-			<button>5</button>
-			<button>6</button>
-			<button>+</button>
-			<button>7</button>
-			<button>8</button>
-			<button>9</button>
-			<button>-</button>
-			<button>.</button>
-			<button>0</button>
-			<button class="span-two">=</button>
-		</div>
-	</head>
-	<body></body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Calculator</title>
+</head>
+<body>
+<div class="container">
+    <form action="" method="post">
+        <div class="field">
+            <b>Num1:</b>
+            <input type="number"   required="required" value="" /> 
+        </div>
+        
+        <div class="field">
+            <b>Num2:</b>
+            <input type="number"   required="required" value="" /> 
+        </div>
 
-	<head>
-		<meta charset="utf-8" />
-		<title>Calculator</title>
-		<link href="../public/css/style.css" rel="stylesheet" />
-		<div class="calculator-grid">
-			<div class="output">
-				<div class="previous-operand"></div>
-				<div class="current-operand"></div>
-			</div>
-			<button class="span-two">AC</button>
-			<button class="delete">DEL</button>
-			<button>÷</button>
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			<button>*</button>
-			<button>4</button>
-			<button>5</button>
-			<button>6</button>
-			<button>+</button>
-			<button>7</button>
-			<button>8</button>
-			<button>9</button>
-			<button>-</button>
-			<button>.</button>
-			<button>0</button>
-			<button class="span-two">=</button>
-		</div>
-	</head>
-	<body></body>
+        <div class="field">
+            <b>Operand:</b>
+            <input type="number"  required="required" value="" />
+        </div>
+
+        <div class="field">
+            <b>Result:</b>
+            <input readonly="readonly"  name="result" value=""> 
+        </div>
+
+    </form>
+</div>
+
+    
+</body>
 </html>

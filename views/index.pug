@@ -1,24 +1,23 @@
 doctype html
 head
-    meta(charset='UTF-8')
-    meta(http-equiv='X-UA-Compatible' content='IE=edge')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title SIMPLE CALICULATOR
     link(rel='stylesheet' href='/css/style.css')
-    title Calculator
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
+    h1 SIMPLE CALCULATOR
 .container
-    form(action='' method='post')
-        .field
-            b Num1:
-            input(type='number' name='num1' required='required' value='')
-        .field
-            b Num2:
-            input(type='number' name='num2' required='required' value='')
-        .field
-            b Operand:
-            input(type='text' name='operator' required='required' value='')
-        button(type='submit') GO
-
-    if result
-        h1 #{result}
-
-
+    p #{result}
+    form#signup.form(action="" method='post')
+        .form-field
+            label(for='num1') Enter First Number:
+            input#num1(type='number' name='num1' autocomplete='off')
+            small
+        .form-field
+            label(for='num2') Enter Second Number:
+            input#num2(type='number' name='num2' autocomplete='off')
+            small
+        .form-field
+            label(for='confirm-password') Operand:
+            input#confirm-password(type='text' name='operator' autocomplete='off')
+            small
+        .form-field
+            button(type='submit') RESULT

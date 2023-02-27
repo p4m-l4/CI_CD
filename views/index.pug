@@ -1,0 +1,24 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/style.css')
+    title Calculator
+.container
+    form(action='' method='post')
+        .field
+            b Num1:
+            input(type='text' name='num1' required='required' value='')
+        .field
+            b Num2:
+            input(type='text' name='num2' required='required' value='')
+        .field
+            b Operand:
+            input(type='text' name='operator' required='required' value='')
+        button(type='submit') GO
+
+    if result
+        h1 #{result}
+
+

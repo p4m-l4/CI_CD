@@ -13,3 +13,10 @@ function divide(a, b) {
 function subtract(a, b) {
 	return a - b;
 }
+
+export {
+	add,
+	multiply,
+	subtract,
+	divide,
+}

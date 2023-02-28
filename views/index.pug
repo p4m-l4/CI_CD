@@ -7,6 +7,7 @@ head
     script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
     h1.form-field(style='color: teal') SIMPLE CALCULATOR
 .container
+
     p.para #{result}
     br
     form#signup.form(action="" method='post')
@@ -15,12 +16,12 @@ head
             input#num1(type='number' name='num1' autocomplete='off')
             small
         .form-field
-            label#lbl(for='num2') Enter Second Number:
-            input#num2(type='number' name='num2' autocomplete='off')
+            label#lbl(for='operator') Operator (+, -, /, *)
+            input#operator(type='text' name='operator' required autocomplete='off')
             small
         .form-field
-            label#lbl(for='operator') Operand (+, -, /, *)
-            input#operator(type='text' name='operator' required autocomplete='off')
+            label#lbl(for='num2') Enter Second Number:
+            input#num2(type='number' name='num2' autocomplete='off')
             small
         .form-field
             button.btn.btn-primary(type='submit') RESULT

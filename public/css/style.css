@@ -85,15 +85,15 @@ body {
 
 /* button */
 .btn {
-    width: 100%;
-    padding: 3%;
-    border-radius: 10%;
+    width: 40%;
+    padding: 5%;
+    border-radius: 5%;
     background: #007bff;
     border-bottom: 2px solid #007bff;
     border-top-style: none;
     border-right-style: none;
     border-left-style: none;
-    color: teal;
+    color: white;
     text-transform: uppercase;
 }
 
@@ -104,4 +104,21 @@ body {
 
 .btn:focus {
     outline: none;
+}
+#lbl{
+    color: teal;
+    font-family: Times, Times New Roman, serif;
+    font-size: large;
+}
+.para{
+    color: teal;
+    font-family: Times, Times New Roman, serif;
+    font-size: large;
+    text-align: center;
+    font-size: larger;
+    background-color: aqua;
+    width: 90%;
+    margin-left: 20px;
+    height: 35px;
+    border-radius: 3px;
 }

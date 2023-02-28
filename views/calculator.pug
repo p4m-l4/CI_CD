@@ -12,18 +12,22 @@ html(lang='en')
     h1.form-title(style='color: teal') SIMPLE CALCULATOR
     .container
       .mb-3.screen #{result}
-      form#signup.form(action="" method='post')
+      form#signup.form(action="" name="calculate" method='post' onsubmit="return validate()")
         #field.mb-3
           label.form-label(for='num1')
             strong Enter First Number:
           input#num1.form-control(type='number', name='num1')
+          small#num1err
         #field.mb-3
           label.form-label(for='num2')
             strong Enter Second Number:
           input#num2.form-control(type='number', name='num2')
+          small#num2err
         #field.mb-3
           label.form-label(for='operand')
             strong Operator(+,  -,  /,  *)
           input#operand.form-control(type='text', name='operator')
+          small#operatorerr
         button.btn.btn-secondary(type='submit')
           strong Equal
+    script(src='/js/validation.js')

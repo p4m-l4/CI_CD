@@ -20,7 +20,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 // Home Route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('calculator');
 });
 
 // Home Post
@@ -48,7 +48,7 @@ app.post('/', (req, res) => {
     result = `${num1} : ${num2} = ${ans}`;
   }
 
-  res.render('index', { result });
+  res.render('calculator', { result });
 });
 
 app.listen(3000, () => {

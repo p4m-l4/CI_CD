@@ -1,4 +1,6 @@
 // Required modules
+// eslint-disable-next-line import/no-extraneous-dependencies
+import * as dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
 
@@ -8,8 +10,13 @@ import subtract from './calculator/subtract.js';
 import multiply from './calculator/multiply.js';
 import divide from './calculator/divide.js';
 
+dotenv.config();
+
 // Instantiation
 const app = express();
+
+// Constants
+const { PORT } = process.env;
 
 app.set('view engine', 'pug');
 app.set('views', path.join(process.cwd(), 'views'));
@@ -30,27 +37,28 @@ app.post('/', (req, res) => {
   const { num2 } = (req.body);
   const oper = req.body.operator;
   const operator = oper.trim();
-  let operands = ['+', '-', '/', '*'];
+  const operands = ['+', '-', '/', '*'];
 
   if (!operands.includes(operator)) {
     result = `Wrong Operator " ${operator} "`;
   } else if (operator === '+') {
-    let ans = add(num1, num2);
+    const ans = add(num1, num2);
     result = `${num1} + ${num2} = ${ans}`;
   } else if (operator === '-') {
-    let ans = subtract(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    const ans = subtract(num1, num2);
+    result = `${num1} - ${num2} = ${ans}`;
   } else if (operator === '*') {
-    let ans = multiply(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    const ans = multiply(num1, num2);
+    result = `${num1} x ${num2} = ${ans}`;
   } else if (operator === '/') {
-    let ans = divide(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
+    const ans = divide(num1, num2);
+    result = `${num1} : ${num2} = ${ans}`;
   }
 
   res.render('index', { result });
 });
 
-app.listen(3000, () => {
-  console.log('listening on port 3000');
+app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  console.log(`listening on port ${PORT}`);
 });

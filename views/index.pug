@@ -1,27 +1,34 @@
 doctype html
 head
-    title SIMPLE CALICULATOR
-    link(rel='stylesheet' href='/css/style.css')
-    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css' integrity='sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7' crossorigin='anonymous')
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==' crossorigin='anonymous' referrerpolicy='no-referrer')
-    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
-    h1.form-field(style='color: teal') SIMPLE CALCULATOR
-.container
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Simple Calculator
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous')
+h1.text-center.text-success Simple Calculator
+.container.my-5.text-success
+    .row
+        .col-4
+            .card.border(style='width: 18rem')
+                .card-header.fs-5.fw-bold History
+                if results
+                    each result in results
+                        ul.list-group.list-group-flush
+                            li.list-group-item #{result.result}
 
-    p.para #{result}
-    br
-    form#signup.form(action="" method='post')
-        .form-field
-            label#lbl(for='num1') Enter First Number:
-            input#num1(type='number' name='num1' autocomplete='off')
-            small
-        .form-field
-            label#lbl(for='operator') Operator (+, -, /, *)
-            input#operator(type='text' name='operator' required autocomplete='off')
-            small
-        .form-field
-            label#lbl(for='num2') Enter Second Number:
-            input#num2(type='number' name='num2' autocomplete='off')
-            small
-        .form-field
-            button.btn.btn-primary(type='submit') RESULT
+        .col-8
+            .form.border.border-success.p-5.w-75.shadow-lg.bg-white.rounded
+                .screen.w-100.p-4.mb-5.bg-success.text-center.bg-opacity-25.fs-5.fw-bold
+                    | #{result}
+                form(action="/" method='post')
+                    .mb-3.fs-5.fw-bold
+                        label.form-label(for='exampleInputEmail1') First Number
+                        input#num1.form-control(type='text' name='num1' aria-describedby='num1help' pattern='(\\d)*(\\.)?([0-9]{1,9})?' required)
+                    .mb-3.fs-5.fw-bold
+                        label.form-label(for='exampleInputEmail1') Operator (+, -, *, /)
+                        input#operator.form-control(type='text' name='operator' aria-describedby='operatorhelp' required)
+                    .mb-3.fs-5.fw-bold
+                        label.form-label(for='exampleInputEmail1') Second Number
+                        input#num2.form-control(type='text' name='num2' aria-describedby='num2help' pattern='(\\d)*(\\.)?([0-9]{1,9})?' required)
+                    button.btn.btn-success(type='submit') Calculate
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js' integrity='sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN' crossorigin='anonymous')

@@ -24,3 +24,33 @@
 //-             small
 //-         .form-field
 //-             button.btn.btn-primary(type='submit') RESULT
+
+doctype html
+head
+    title SIMPLE CALICULATOR
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css' integrity='sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-Q3E3XZ7RL7')
+    h1.form-field(style='color: teal') SIMPLE CALCULATOR
+.container
+
+    p.para #{result}
+    br
+    form#signup.form(action="" method='post')
+        .form-field
+            label#lbl(for='num1') Enter First Number:
+            input#num1(type='number' name='num1' autocomplete='off')
+            small
+        .form-field
+            label#lbl(for='operator') Operator (+, -, /, *)
+            input#operator(type='text' name='operator' required autocomplete='off')
+            small
+        .form-field
+            label#lbl(for='operator') Operator (+, -, /, *)
+            input#operator(type='text' name='operator' required autocomplete='off')
+            label#lbl(for='num2') Enter Second Number:
+            input#num2(type='number' name='num2' autocomplete='off')
+            small
+        .form-field
+            button.btn.btn-primary(type='submit') RESULT

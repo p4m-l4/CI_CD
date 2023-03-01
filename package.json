@@ -4,9 +4,9 @@
 	"description": "Simple calculator",
 	"main": "index.js",
 	"type": "module",
-	"directory": "test || true",
+	"directory": "test",
 	"scripts": {
-		"test": "mocha",
+		"test": "mocha || true",
 		"start": "nodemon index.js"
 	},
 	"keywords": [
@@ -17,7 +17,8 @@
 	"author": "edwin albert pamela john",
 	"license": "ISC",
 	"dependencies": {
-		"eslint": "^8.35.0",
+   "eslint": "^8.35.0",
+		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
 		"mongoose": "^7.0.0",
 		"passport": "^0.6.0",

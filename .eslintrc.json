@@ -13,8 +13,8 @@
 	},
 	"rules": {
 		"linebreak-style": "off",
-		"import/extensions": "off",
-		"no-console": "off",
-		"prefer-const": "off"
+		"import/extensions": "off"
+		// "no-console": "off",
+		// "prefer-const": "off"
 	}
 }

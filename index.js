@@ -22,7 +22,7 @@ const { PORT } = process.env || 3000;
 
 // =========================== DB connection ============================================
 await mongoose.connect(process.env.DB_URI)
-  .then(() => console.log(`Connected to ${process.env.DB_URI}!`));
+  .then(() => console.log(`Connected to ${process.env.DB_URI}! 👌`));
 
 // app settings
 app.set('view engine', 'pug');
@@ -86,5 +86,5 @@ app.post('/', async (req, res, next) => {
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log(`listening on port ${PORT}`);
+  console.log(`🚩 listening on port 🙌 ${PORT} 🙌 🚩`);
 });

@@ -1,0 +1,58 @@
+body{
+    background: rgb(245, 255, 254);
+    overflow: hidden;
+}
+
+form{
+    margin-top: 50px;
+    transform: translateX(35%);
+}
+    
+input {
+    margin-top: 5px;
+    border: 2px solid rgb(47, 193, 255);
+    padding: 15px;
+    width: 35%; 
+}
+
+
+#field{
+     padding:6px 15px;
+    width: 35%; 
+}
+
+b{
+    
+    font-style: Helvetica;
+    font-size: 25px;
+}
+
+
+.screen{
+    margin-top: 100px;
+    background:lightgrey;
+    transform: translateX(100%);
+    border: 2px solid;
+    border-radius:15px;
+    height: 12vh;
+
+}
+
+h2{
+    text-align: center;
+    margin-top: 15px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0, 0.5);
+    background: white;
+    padding: 0;
+    border: 5px ;
+    border-radius: 5px;
+    width:60% ;
+}

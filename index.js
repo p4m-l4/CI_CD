@@ -3,13 +3,6 @@
 import * as dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
-import config  from '../config/db';
-import passport  from 'passport';
-import mongoose  from 'mongoose';
-
-
-// importing user model
-import Storing from "./model/Store";
 
 // locals
 import add from './calculator/add.js';
@@ -22,24 +15,8 @@ dotenv.config();
 // Instantiation
 const app = express();
 
-
-// Setting up db connections
-mongoose.connect(config.database,{ useNewUrlParser: true });
-const db = mongoose.connection;
-
-// Check connection
-db.once('open', function(){
-
-console.log('Connected to MongoDB');
-});
-// Check for db errors
-db.on('error', function(err){
-  console.error(err);
-});
-=======
 // Constants
 const { PORT } = process.env;
-
 
 app.set('view engine', 'pug');
 app.set('views', path.join(process.cwd(), 'views'));
@@ -48,21 +25,13 @@ app.set('views', path.join(process.cwd(), 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.cwd(), 'public')));
 
- // Passport configuration middleware
- app.use(passport.initialize());
- passport.use(Storing.createStrategy());
- 
-
 // Home Route
 app.get('/', (req, res) => {
-  res.render('calculator');
+  res.render('index');
 });
 
 // Home Post
-app.post('/', async (req, res) => {
-  try {
-    const data = new Storing(req.body);
-
+app.post('/', (req, res) => {
   let result;
   const { num1 } = req.body;
   const { num2 } = (req.body);
@@ -85,12 +54,8 @@ app.post('/', async (req, res) => {
     const ans = divide(num1, num2);
     result = `${num1} : ${num2} = ${ans}`;
   }
-  await data.save();
-  res.render('calculator', { result });
-  } catch (error) {
-    res.status(400).redirect('calculator');
-    console.log(error);
-  };
+
+  res.render('index', { result });
 });
 
 app.listen(PORT, () => {

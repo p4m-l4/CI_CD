@@ -1,5 +1,6 @@
+
 #Set the baseImage to use for subsequent instructions. FROM must be the first instruction in a Dockerfile.
-FROM node:12 
+FROM node:19 
 
 #Set the working directory for any subsequent ADD,COPY,CMD,ENTRYPOINT, or RUN instructions that follow it in the Dockerfile.
 WORKDIR /app
@@ -14,7 +15,9 @@ RUN npm install
 COPY . .
 
 #Set the environment variable key to the value.
-ENV PORT=3000
+#ENV PORT=3000
 
 #Define the network ports that this container will listen on at runtime.
 EXPOSE 3000
+
+CMD [ "npm","start" ]

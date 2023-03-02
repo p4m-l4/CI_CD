@@ -25,12 +25,11 @@ body {
 }
 
 .container {
-
-    background-color: #fff;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.5);
-    width: 450px;
+	background-color: #fff;
+	padding: 1em;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	width: 400px;
 }
 
 .form {
@@ -94,10 +93,6 @@ body {
 }
 
 .btn:hover {
-
-/*     background: #8d99a5;
-    cursor: pointer; */
-
 	background: #0069d9;
 	cursor: pointer;
 }
@@ -123,26 +118,4 @@ body {
 	height: 50px;
 	border-radius: 3px;
 	padding: 15px;
-}
-
-.screen{
-    color: teal;
-    font-family: Times, Times New Roman, serif;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 900;
-    width: 100%;
-    height: 65px;
-    border-radius: 3px;
-    background:lightgrey;
-    padding: 15px;
-    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.5);
-}
-
-input{
-    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.5);
-}
-.form-title{
-    font-family: Tahoma;
-    font-weight: 800;
 }

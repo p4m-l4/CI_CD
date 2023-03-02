@@ -11,7 +11,8 @@ A very simple calculator that runs anywhere in your environment.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![image](https://user-images.githubusercontent.com/102288573/222350044-c1f07912-3584-4b99-82e4-f20370b7861f.png)
+
 
 ## Environment Variables
 

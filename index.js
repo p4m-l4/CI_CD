@@ -21,7 +21,8 @@ const app = express();
 const { PORT } = process.env || 3000;
 
 // =========================== DB connection ============================================
-await mongoose.connect(process.env.DB_URI)
+await mongoose
+  .connect(process.env.DB_URI)
   .then(() => console.log(`Connected to ${process.env.DB_URI}! 👌`));
 
 // app settings
@@ -47,7 +48,7 @@ app.post('/', async (req, res, next) => {
     //  Instantiate Variables
     let result;
     const { num1 } = req.body;
-    const { num2 } = (req.body);
+    const { num2 } = req.body;
     const oper = req.body.operator;
     const operator = oper.trim();
     const operands = ['+', '-', '/', '*'];

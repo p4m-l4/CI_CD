@@ -49,7 +49,7 @@ To run tests, run the following command
 
 ## 🚀 Authors
 
-- [@TrippleA-Ashaba](https://www.github.com/octokatherine) Albert Ashaba Aheebwa
+- [@TrippleA-Ashaba](https://www.github.com/octokatherine) Albert Ashaba Aheebwa ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fashabaheebwa)
 - [@p4m-l4](https://github.com/p4m-l4) Pamela Namala
 - [@edwin-niwaha](https://github.com/edwin-niwaha) Edwin Niwaha
 - [@KayanjaJohn](https://github.com/KayanjaJohn) KayanjaJohn

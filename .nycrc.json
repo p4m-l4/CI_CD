@@ -1,3 +1,5 @@
 {
-  "exclude": ["node_modules", "coverage", "public"]
+  "exclude": ["node_modules", "coverage", "public"],
+  "all": true,
+  "check-coverage": true
 }

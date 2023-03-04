@@ -6,9 +6,9 @@
   "type": "module",
   "directory": "test",
   "scripts": {
-    "test": "mocha || true",
     "start": "nodemon index.js",
-    "coverage": "nyc npm run test",
+    "test": "mocha || true",
+    "coverage": "nyc --reporter=html --reporter=text --all npm run test",
     "lint": "npx eslint .",
     "lint-fix": "npx eslint --fix .",
     "beautifier": "npx prettier --write ."
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.7",
+    "coveralls": "^3.1.1",
     "eslint": "^8.35.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",

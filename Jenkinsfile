@@ -15,7 +15,7 @@ pipeline {
 
     stage('build image') {
       steps {
-        sh 'docker build -f Dockerfile .'
+        sh 'docker build . -t tkterry256/calctest:latest'
       }
     }
 

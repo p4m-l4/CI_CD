@@ -5,7 +5,7 @@ import add from '../calculator/add.js';
 import subtract from '../calculator/subtract.js';
 import multiply from '../calculator/multiply.js';
 import divide from '../calculator/divide.js';
-import Calc from '../models/Calc.js';
+import Calc from '../models/calc.js';
 
 const router = Router();
 

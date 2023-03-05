@@ -40,7 +40,8 @@ pipeline {
         MONGO_URI = 'mongodb+srv://coder:bbfIhQ5apCI3toD2@cluster0.cz22dwx.mongodb.net/calc_prod?retryWrites=true&w=majority'
       }
       steps {
-        sh '''docker run \\
+        sh '''docker stop calctest && docker rm calctest || true
+docker run \\
 -e DB_URI="${MONGO_URI}" -e PORT=\'3000\' \\
 -d -p 8000:3000 --name calctest \\
 trippleaunit/calctest:latest'''

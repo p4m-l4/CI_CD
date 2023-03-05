@@ -19,5 +19,15 @@ pipeline {
       }
     }
 
+    stage('log into Dockerhub') {
+      environment {
+        DOCKERHUB_USER = 'trippleaunit'
+        DOCKERHUB_PASSWORD = 'Safari170692'
+      }
+      steps {
+        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
+      }
+    }
+
   }
 }

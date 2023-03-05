@@ -29,5 +29,11 @@ pipeline {
       }
     }
 
+    stage('push') {
+      steps {
+        sh 'docker push trippleaunit/calctest:latest'
+      }
+    }
+
   }
 }

@@ -4,7 +4,7 @@ const calcSchema = new mongoose.Schema(
   {
     result: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model('Calc', calcSchema);

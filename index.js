@@ -22,7 +22,8 @@ const { PORT } = process.env || 3000;
 
 await mongoose
   .connect(process.env.DB_URI)
-  .then(() => console.log(`Connected to ${process.env.DB_URI}! 👌`));
+  // eslint-disable-next-line no-console
+  .then(() => console.log('Connected to DB! 👌'));
 
 // app settings
 app.set('view engine', 'pug');

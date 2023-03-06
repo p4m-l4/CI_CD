@@ -1,4 +1,4 @@
-![tested](https://img.shields.io/badge/tested-75%25-green) ![tests](https://img.shields.io/badge/tests-19%20passed%2C%200%20failed-brightgreen) 
+![tested](https://img.shields.io/badge/tested-75%25-green) ![tests](https://img.shields.io/badge/tests-19%20passed%2C%200%20failed-brightgreen)
 ![docker](https://img.shields.io/badge/docker%20build-automated-blue) ![express](https://img.shields.io/badge/express-v4.18.2-blue) ![dotenv](https://img.shields.io/badge/dotenv-v16.0.3-yellow) ![pug](https://img.shields.io/badge/pug-v3.0.2-red) ![jenkins](https://img.shields.io/badge/jenkins-CI%2FCD-brightgreen)
 
 # A Simple Calculator
@@ -52,7 +52,7 @@ To run tests, run the following command
 
 ## 🚀 Authors
 
-- [@TrippleA-Ashaba](https://www.github.com/octokatherine) Albert Ashaba Aheebwa 
+- [@TrippleA-Ashaba](https://www.github.com/octokatherine) Albert Ashaba Aheebwa
 - [@p4m-l4](https://github.com/p4m-l4) Pamela Namala
 - [@edwin-niwaha](https://github.com/edwin-niwaha) Edwin Niwaha
 - [@KayanjaJohn](https://github.com/KayanjaJohn) KayanjaJohn

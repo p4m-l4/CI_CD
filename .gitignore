@@ -5,3 +5,4 @@ package-lock.json
 views/index.html
 .nyc_output
 coverage
+logs

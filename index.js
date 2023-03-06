@@ -1,89 +1,61 @@
-// Required modules
+// ========================== Required modules ================================
+import * as dotenv from 'dotenv';
 import express from 'express';
 import path from 'path';
-import config  from '../config/db';
-import passport  from 'passport';
-import mongoose  from 'mongoose';
+import mongoose from 'mongoose';
 
+// ================================= locals ========================================
 
-// importing user model
-import Storing from "./model/Store";
+import logger from './logger.js';
+import httpLogger from './httpLogger.js';
+import calcRoute from './routes/calcRoute.js';
 
-// locals
-import add from './calculator/add.js';
-import subtract from './calculator/subtract.js';
-import multiply from './calculator/multiply.js';
-import divide from './calculator/divide.js';
+// =============================== Load Environment Variables ========================
+
+dotenv.config();
 
 // Instantiation
 const app = express();
 
-// Setting up db connections
-mongoose.connect(config.database,{ useNewUrlParser: true });
-const db = mongoose.connection;
+// Constants
+const { PORT } = process.env || 3000;
 
-// Check connection
-db.once('open', function(){
+// =========================== DB connection ============================================
 
-console.log('Connected to MongoDB');
-});
-// Check for db errors
-db.on('error', function(err){
-  console.error(err);
-});
+await mongoose
+  .connect(process.env.DB_URI)
+  // eslint-disable-next-line no-console
+  .then(() => console.log('Connected to DB! 👌'));
 
+// loggers
+function logErrors(err, req, res, next) {
+  // console.error(err.stack);
+  next(err);
+}
+function errorHandler(err, req, res) {
+  res.status(500).send('Error!');
+}
+
+// app settings
 app.set('view engine', 'pug');
 app.set('views', path.join(process.cwd(), 'views'));
 
 // middleware
+app.use(httpLogger);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(process.cwd(), 'public')));
 
- // Passport configuration middleware
- app.use(passport.initialize());
- passport.use(Storing.createStrategy());
- 
+// =========================== routes =======================================
 
-// Home Route
-app.get('/', (req, res) => {
-  res.render('calculator');
-});
+app.use('/', calcRoute);
 
-// Home Post
-app.post('/', async (req, res) => {
-  try {
-    const data = new Storing(req.body);
+// listening port
 
-  let result;
-  const { num1 } = req.body;
-  const { num2 } = (req.body);
-  const oper = req.body.operator;
-  const operator = oper.trim();
-  let operands = ['+', '-', '/', '*'];
+app.use(logErrors);
+app.use(errorHandler);
 
-  if (!operands.includes(operator)) {
-    result = `Wrong Operator " ${operator} "`;
-  } else if (operator === '+') {
-    let ans = add(num1, num2);
-    result = `${num1} + ${num2} = ${ans}`;
-  } else if (operator === '-') {
-    let ans = subtract(num1, num2);
-    result = `${num1} - ${num2} = ${ans}`;
-  } else if (operator === '*') {
-    let ans = multiply(num1, num2);
-    result = `${num1} x ${num2} = ${ans}`;
-  } else if (operator === '/') {
-    let ans = divide(num1, num2);
-    result = `${num1} : ${num2} = ${ans}`;
-  }
-  await data.save();
-  res.render('calculator', { result });
-  } catch (error) {
-    res.status(400).redirect('calculator');
-    console.log(error);
-  };
-});
-
-app.listen(3000, () => {
-  console.log('listening on port 3000');
+app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
+  // console.log(`🚩 listening on port 🙌 ${PORT} 🙌 🚩`);
+  logger.info(`Calc server listening on port ${PORT}`);
 });

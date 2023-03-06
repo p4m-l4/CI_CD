@@ -1,2 +1,8 @@
 node_modules
 package-lock.json
+.env
+/.env
+views/index.html
+.nyc_output
+coverage
+logs

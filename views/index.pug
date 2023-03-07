@@ -22,7 +22,7 @@ h1.text-center.text-success Simple Calculator
                     | #{result}
                 form(action="/" method='post')
                     .mb-3.fs-5.fw-bold
-                        label.form-label(for='exampleInputEmail1') First Number
+                        label.form-label.text-warning(for='exampleInputEmail1') First Number
                         input#num1.form-control(type='text' name='num1' aria-describedby='num1help' pattern='(\\d)*(\\.)?([0-9]{1,9})?' required)
                     .mb-3.fs-5.fw-bold
                         label.form-label(for='exampleInputEmail1') Operator (+, -, *, /)

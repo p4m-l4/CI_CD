@@ -1,6 +1,6 @@
 
 #Set the baseImage to use for subsequent instructions. FROM must be the first instruction in a Dockerfile.
-FROM node:19 
+FROM node:18
 
 #Set the working directory for any subsequent ADD,COPY,CMD,ENTRYPOINT, or RUN instructions that follow it in the Dockerfile.
 WORKDIR /app

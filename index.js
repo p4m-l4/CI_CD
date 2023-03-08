@@ -1,3 +1,5 @@
+// Dependency Inversion Principle
+
 // ========================== Required modules ================================
 import * as dotenv from 'dotenv';
 import express from 'express';
@@ -49,11 +51,10 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 app.use('/', calcRoute);
 
-// listening port
-
 app.use(logErrors);
 app.use(errorHandler);
 
+// listening port
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
   // console.log(`🚩 listening on port 🙌 ${PORT} 🙌 🚩`);

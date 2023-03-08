@@ -30,7 +30,7 @@ router.post('/', async (req, res, next) => {
     const operator = oper.trim();
     const operands = ['+', '-', '/', '*'];
 
-// Run calculation
+    // Run calculation
 
     if (!operands.includes(operator)) {
       result = `Wrong Operator " ${operator} "`;

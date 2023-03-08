@@ -16,6 +16,7 @@ export default router.get('/', async (req, res) => {
 });
 
 // Home Post
+// Single Responsibility Principle, running calculations, store to DB
 router.post('/', async (req, res, next) => {
   try {
     // get old results
@@ -29,7 +30,7 @@ router.post('/', async (req, res, next) => {
     const operator = oper.trim();
     const operands = ['+', '-', '/', '*'];
 
-    // Run Computations
+// Run calculation
 
     if (!operands.includes(operator)) {
       result = `Wrong Operator " ${operator} "`;

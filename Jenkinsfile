@@ -25,8 +25,19 @@ pipeline {
     }
 
     stage('Build') {
-      steps {
-        sh 'npm run build:client'
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'npm run build:client'
+          }
+        }
+
+        stage('Build docker image') {
+          steps {
+            sh 'docker build . -t p4m3l4/calc-app:$BUILD_NUMBER'
+          }
+        }
+
       }
     }
 

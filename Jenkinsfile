@@ -51,5 +51,11 @@ pipeline {
       }
     }
 
+    stage('Push') {
+      steps {
+        sh 'docker push p4m3l4/calc-app:latest '
+      }
+    }
+
   }
 }
